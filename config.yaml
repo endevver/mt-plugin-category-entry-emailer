@@ -1,0 +1,18 @@
+id:          CategoryEntryEmailer
+key:         CategoryEntryEmailer
+name:        Category-Based Entry Creation Email Notifier
+author_name: Dan Wolfgang, Endevver LLC
+author_link: http://endevver.com
+plugin_link: https://github.com/endevver/mt-plugin-category-entry-emailer
+version:     1.0.0
+
+blog_config_template:
+    code: $CategoryEntryEmailer::CategoryEntryEmailer::Plugin::blog_config_template
+
+settings:
+    email_field:
+        scope: blog
+        default: ''
+
+callbacks:
+    api_post_save.entry: $CategoryEntryEmailer::CategoryEntryEmailer::Plugin::api_post_save_entry
